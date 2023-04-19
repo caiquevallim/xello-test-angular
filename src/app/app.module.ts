@@ -9,7 +9,7 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { HttpClientModule } from '@angular/common/http';
-import {PricePipe} from './pipes/price/price.pipe';
+import {PricePipe} from './pipes';
 import {ProductService} from './services/product.service';
 import {StarComponent} from './star/start.component';
 
