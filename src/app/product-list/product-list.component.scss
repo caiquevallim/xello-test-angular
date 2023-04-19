@@ -1,0 +1,32 @@
+@use "src/assets/colors" as colors;
+
+.product {
+  border: 1px solid darkgray;
+  padding: 15px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.cta-container {
+  display: flex;
+  &--left{
+    align-self: flex-start;
+    flex-grow: 1;
+  }
+  &--right{
+    align-self: flex-end;
+    button:nth-child(2) {
+      margin-left: 8px;
+    }
+  }
+}
+
+.price {
+  font-weight: 700;
+}
+
+
+.sale {
+  background-color: yellow;
+}
+

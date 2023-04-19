@@ -1,0 +1,44 @@
+<h2>Products</h2>
+
+<div class="product" *ngFor="let product of (products$ | async)">
+  <h3>
+    <a [title]="product.name + ' details'">
+      {{ product.name }}
+    </a>
+  </h3>
+
+  <p *ngIf="product.description">Description: {{ product.description }}</p>
+
+  <app-star [rating]="product.rating"></app-star>
+  <p
+    class="price"
+    [ngClass]="{'sale': product.price < onSaleLimit}"
+  >
+    {{ product.price | price: locale }}
+  </p>
+
+  <div class="cta-container">
+    <div class="cta-container--left">
+      <button type="button" (click)="share()">Add to cart</button>
+    </div>
+    <div class="cta-container--right">
+      <button
+        type="button"
+        *ngIf="!product.isFavourite else tmplRemoveFavourite;"
+        (click)="createFavourite(product)"
+      >
+        Favorite
+      </button>
+      <ng-template #tmplRemoveFavourite>
+        <button
+          type="button"
+          (click)="removeFavourite(product)"
+        >
+          Remove favorite
+        </button>
+
+      </ng-template>
+      <button type="button">Share</button>
+    </div>
+  </div>
+</div>

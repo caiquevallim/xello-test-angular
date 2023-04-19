@@ -1,0 +1,7 @@
+@use "src/assets/colors" as colors;
+
+.star-container{
+  .material-icons.voted{
+    color: colors.$product-star-color;
+  }
+}

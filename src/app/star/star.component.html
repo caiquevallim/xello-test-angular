@@ -1,0 +1,7 @@
+<div class="star-container" *ngIf="rates">
+  <i
+    *ngFor="let isVoted of rates"
+    class="material-icons"
+    [ngClass]="{'voted': isVoted}"
+  >star</i>
+</div>
